@@ -1,0 +1,26 @@
+<h3>Results</h3>
+
+<table class="table table-striped">
+  <tr>
+    <th>Title</th>
+    <th>Time</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @trackers.each do |tracker| %>
+
+  <tr>
+    <td><%= tracker.title %></td>
+    <td><%= tracker.time %></td>
+    <td><%= link_to 'Show', tracker %></td>
+    <td><%= link_to 'Edit', edit_tracker_path(tracker) %></td>
+    <td><%= link_to 'Delete', tracker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Entry', new_tracker_path, :class => "btn btn-mini" %>

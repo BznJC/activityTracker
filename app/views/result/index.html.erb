@@ -1,0 +1,14 @@
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+
+<h3>Results:</h3>
+
+<% @trackers.each do |tracker| %>
+	<div class="container">
+		<table class="table table-striped">
+			<h5><%= tracker.title %></h5>
+			<p><%= tracker.time %></p>
+		</table>
+	</div>
+<% end %>
