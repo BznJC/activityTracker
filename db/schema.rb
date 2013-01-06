@@ -11,21 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121231232526) do
+ActiveRecord::Schema.define(:version => 20130106212333) do
 
-  create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.integer  "amount"
+  create_table "microposts", :force => true do |t|
+    t.string   "content"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "trackers", :force => true do |t|
     t.string   "title"
-    t.string   "string"
-    t.decimal  "time",       :precision => 8, :scale => 2
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
+    t.decimal  "time"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

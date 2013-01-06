@@ -1,4 +1,8 @@
 ActivityTracker::Application.routes.draw do
+  resources :users
+
+  resources :microposts
+
   get "result/index"
 
   resources :trackers
